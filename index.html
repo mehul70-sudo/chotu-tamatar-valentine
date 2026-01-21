@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hello My Chotu Tamatar 🍅❤️💋</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ff5f6d, #ffc371);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+    }
+
+    .card {
+        background: rgba(255, 255, 255, 0.18);
+        padding: 30px 25px;
+        border-radius: 25px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        max-width: 90%;
+        width: 360px;
+        z-index: 2;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 12px 22px;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        margin: 8px;
+        transition: 0.3s;
+    }
+
+    .yes {
+        background: #ff2e63;
+        color: white;
+    }
+
+    .yes:hover {
+        transform: scale(1.1);
+    }
+
+    .no {
+        background: white;
+        color: #ff2e63;
+        position: absolute;
+    }
+
+    /* Hearts */
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        font-size: 20px;
+        animation: floatUp 6s linear infinite;
+        opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-110vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <h1>kese ho meri Chotu Tamatar 🤭🍅💖</h1>
+
+    <p>
+        Aapki kissable smile se mera din bright ho jata hai cutiee 💋🤭🤌   
+        or aapki ittiiii pyarii awaj sunke blush ajata h 🤭🤭❤️
+    </p>
+
+    <h2>Will you be my Valentine?? 👉👈👀🌹</h2>
+
+    <button class="yes" onclick="yesClicked()">YES 💕</button>
+    <button class="no" onmouseover="moveButton(this)">NO 🙈</button>
+</div>
+
+<script>
+    function yesClicked() {
+        document.body.innerHTML = `
+            <div style="
+                height:100vh;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+                align-items:center;
+                text-align:center;
+                color:white;">
+                <h1>YAYYYY!!! 🎉❤️</h1>
+                <p style="font-size:1.3em;">
+                    My garam aalu ka paratha 🤭💋,  
+                    you just made my heart super happy 💖
+                </p>
+                <h2>Best Valentine Ever 😘🌹</h2>
+            </div>
+        `;
+    }
+
+    function moveButton(btn) {
+        btn.style.top = Math.random() * 80 + "vh";
+        btn.style.left = Math.random() * 80 + "vw";
+    }
+
+    // Hearts generator
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }, 300);
+</script>
+
+</body>
+</html>
